@@ -2,15 +2,15 @@ use chrono::prelude::*;
 
 
 #[derive(Debug)]
-struct Todo {
-    name:String,
-    done: bool,
-    when_done:DateTime<Utc>,
-    id: u32,
+pub struct Todo {
+    pub name:String,
+    pub done: bool,
+    pub when_done:DateTime<Utc>,
+    pub id: u32,
 }
 #[derive(Debug)]
 pub struct Todos {
-  todos: Vec<Todo>
+  pub todos: Vec<Todo>
 }
 
 
@@ -19,22 +19,20 @@ pub struct Todos {
 impl Todos {
 
    
-    fn show_todos(&self) {
+    pub fn show_todos(&self) {
         for item in self.todos.iter() {
             println!("{:?}", item)
         }
     }
 
-    pub fn add_todo(&mut self,name:String)  {
+    pub fn add_todo(&mut self,name:&str)  {
         
         let item = Todo {
-            name:name,
+            name:name.to_string(),
             done: false,
-            when_done: DateTime::<Utc>::from_utc(NaiveDateTime::from_timestamp(61, 0), Utc),  // TODO I need a default datetime for this 
+            when_done: DateTime::<Utc>::from_utc(NaiveDateTime::from_timestamp(61, 0), Utc),  
             id: self.todos.len() as u32 + 1
         };
-
-        println!("{:?}", item)
 
         self.todos.push(item)
     }
@@ -43,16 +41,23 @@ impl Todos {
  
     pub fn delete_todo(&mut self, id:u32) {
             let index = self.todos.iter().position(|x| x.id == id).unwrap();
-            self.todos.remove(index);
-            
+            self.todos.remove(index);      
     }
 
     pub fn toggle_done(&mut self, id:u32)  {
         let index = self.todos.iter().position(|x| x.id == id).unwrap();
         if self.todos[index].done == false {
-            self.todos[index].done = true
+            
+            self.todos[index].done = true;
+            println!("{}",self.todos[index].done);
+            self.todos[index].when_done = Utc::now();
+
         }
-        self.todos[index].done = false 
+        else{
+            self.todos[index].done = false;
+            self.todos[index].when_done = DateTime::<Utc>::from_utc(NaiveDateTime::from_timestamp(61, 0), Utc);
+        }
+        
     }
 
 }
