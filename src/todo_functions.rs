@@ -27,7 +27,7 @@ impl Todos {
 
     pub fn add_todo(&mut self,name:String)  {
         
-        let mut item = Todo {
+        let item = Todo {
             name:name,
             done: false,
             when_done: DateTime::<Utc>::from_utc(NaiveDateTime::from_timestamp(61, 0), Utc),  // TODO I need a default datetime for this 
