@@ -8,7 +8,7 @@ mod server_functions;
 async fn main() -> std::io::Result<()> {
     HttpServer::new(|| {
         App::new()
-            .service(server_functions::hello)
+            .service(server_functions::createTodos)
             .route("/", web::get().to(server_functions::manual_hello))
     })
     .bind("127.0.0.1:8080")?
