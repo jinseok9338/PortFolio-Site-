@@ -1,3 +1,4 @@
+
 use yew::prelude::*;
 
 
@@ -12,7 +13,7 @@ impl Component for App  {
 
     fn create(_ctx: &Context<Self>) -> Self {
         let name = "Hello world".to_owned();
-        gloo::console::console!(name.clone()); 
+        
         Self {name}
     }
 
