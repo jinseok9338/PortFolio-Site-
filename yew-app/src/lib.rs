@@ -1,10 +1,19 @@
 
+mod routes;
+
 use yew::prelude::*;
+use yew_router::prelude::*;
+use routes::{Route, switch};
 
 
 pub struct App {
  name: String,
 }
+
+
+
+
+
 
 impl Component for App  {
     type Message =();
@@ -20,9 +29,15 @@ impl Component for App  {
     
     fn view(&self ,_ctx: &Context<Self>) -> Html {
         html! {
-            <div class ={classes!("flex", "align-center", "justify-center")} >
-                <h1 class={classes!("bg-red-100")} >{&self.name}</h1>
-            </div>
+            <BrowserRouter>
+            <main>
+                <Switch<Route> render={Switch::render(switch)}  />
+            </main>
+
+            // <div class ={classes!("flex", "align-center", "justify-center")} >
+            //     <h1 class={classes!("bg-red-100")} >{&self.name}</h1>
+            // </div>
+            </BrowserRouter>
          }
     }
 }

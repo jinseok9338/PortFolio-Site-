@@ -1,4 +1,5 @@
 use yew_router::prelude::*;
+use yew::prelude::*;
 
 #[derive(Clone, Routable, PartialEq)]
 pub enum Route {
@@ -7,7 +8,7 @@ pub enum Route {
 
 }
 
-pub fn switch(routes: Route) -> Html {
+pub fn switch(routes: &Route) -> Html {
     match routes {
         Route::Home => html! { <h1>{ "Home" }</h1> }
     }
@@ -17,7 +18,7 @@ pub fn switch(routes: Route) -> Html {
 pub fn router() -> Html {
     html! {
         <BrowserRouter>
-            <Switch<Route> render={switch} />
+            <Switch<Route> render={Switch::render(switch)} />
         </BrowserRouter>
     }
 }
