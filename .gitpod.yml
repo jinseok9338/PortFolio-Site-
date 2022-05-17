@@ -1,8 +1,5 @@
 # Commands to start on workspace startup
 tasks:
-  - init: yarn install
-    command: yarn build
-# Ports to expose on workspace startup
-ports:
-  - port: 8000
-    onOpen: open-preview
+  - init: sudo rustup target add wasm32-unknown-unknown && sudo cargo install trunk
+    command: sudo rustup target add wasm32-unknown-unknown && sudo cargo install trunk
+
