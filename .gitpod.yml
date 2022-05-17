@@ -1,5 +1,5 @@
 # Commands to start on workspace startup
 tasks:
-  - init: sudo rustup target add wasm32-unknown-unknown && sudo cargo install trunk
-    command: sudo rustup target add wasm32-unknown-unknown && sudo cargo install trunk
+  - init: rustup target add wasm32-unknown-unknown && cargo install trunk
+    command: rustup target add wasm32-unknown-unknown && cargo install trunk
 
