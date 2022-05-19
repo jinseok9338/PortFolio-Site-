@@ -1,5 +1,5 @@
 # Commands to start on workspace startup
 tasks:
   - init: rustup target add wasm32-unknown-unknown && cargo install trunk
-    command: rustup target add wasm32-unknown-unknown && cargo install trunk && cd yew-app/tailwind-yew-builder && docker-compose up dev && cd ..
+    command: rustup target add wasm32-unknown-unknown && cargo install trunk && cd yew-app/tailwind-yew-builder && docker-compose up dev && cd .. && trunk serve
 

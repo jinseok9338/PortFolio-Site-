@@ -1,5 +1,6 @@
 use yew_router::prelude::*;
 use yew::prelude::*;
+use super::components::card::Card;
 
 #[derive(Clone, Routable, PartialEq)]
 pub enum Route {
@@ -12,7 +13,7 @@ pub enum Route {
 
 pub fn switch(routes: &Route) -> Html {
     match routes {
-        Route::Home => html! { <h1>{ "Home" }</h1> },
+        Route::Home => html! { <Card/>  },
         Route::User { user_id } => html! { <h1>{ user_id }</h1> }
     }
 }
