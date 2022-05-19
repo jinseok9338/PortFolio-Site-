@@ -9,7 +9,7 @@ struct QueryParams {
 }
 
 pub struct Card {
-    name: String,
+    query_params: QueryParams,
 }
 
 impl Component for Card {
@@ -17,18 +17,18 @@ impl Component for Card {
 
     type Properties =();
 
-    fn create(_ctx: &Context<Self>) -> Self {
+    fn create(ctx: &Context<Self>) -> Self {
         
-        let name ="this is awesome".to_owned();
-        Self {name}
+        let query_params :QueryParams = ctx.link().location().unwrap().query().unwrap();
+        Self {query_params}
     }
 
     fn view(&self, ctx: &Context<Self>) -> Html {
 
-        let query_params :QueryParams = ctx.link().location().unwrap().query().unwrap();
+        
         html! {
-            <section>
-            <h1>{&query_params.page}</h1>
+            <section class={classes!()} >
+            <h1 class={classes!("underline", "text-blue-600")}>{&self.query_params.page}</h1>
             </section>
         }
     }
