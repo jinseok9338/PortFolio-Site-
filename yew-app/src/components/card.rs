@@ -1,4 +1,3 @@
-use gloo::history::History;
 use yew::prelude::*;
 use yew_router::{prelude::RouterScopeExt, history::Location};
 use serde::{ Deserialize};
@@ -23,12 +22,12 @@ impl Component for Card {
         Self {query_params}
     }
 
-    fn view(&self, ctx: &Context<Self>) -> Html {
+    fn view(&self, _ctx: &Context<Self>) -> Html {
 
         
         html! {
-            <section class={classes!()} >
-            <h1 class={classes!("underline", "text-blue-600")}>{&self.query_params.page}</h1>
+            <section class={classes!("flex", "justify-center")} >
+                <h1 class={classes!("underline", "text-blue-600")}>{&self.query_params.page}</h1>
             </section>
         }
     }
