@@ -4,7 +4,8 @@ use serde::{ Deserialize};
 
 #[derive(Debug, Deserialize)]
 struct QueryParams {
-    page:String
+    page:String,
+    message: String,
 }
 
 pub struct Card {
@@ -26,8 +27,9 @@ impl Component for Card {
 
         
         html! {
-            <section class={classes!("flex", "justify-center")} >
+            <section class={classes!("flex", "justify-center","flex-col")} >
                 <h1 class={classes!("underline", "text-blue-600")}>{&self.query_params.page}</h1>
+                <p>{&self.query_params.message}</p>
             </section>
         }
     }
