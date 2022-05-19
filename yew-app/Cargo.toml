@@ -9,5 +9,7 @@ edition = "2021"
 gloo = "0.7.0"
 gloo-console = "0.2.1"
 gloo-utils = "0.1.3"
+serde = { version = "1.0.137", features = ["derive"] }
+serde_derive = "1.0.137"
 yew = "0.19.3"
 yew-router = "0.16.0"

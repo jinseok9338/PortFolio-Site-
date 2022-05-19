@@ -13,9 +13,6 @@ pub struct App {
 
 
 
-
-
-
 impl Component for App  {
     type Message =();
 

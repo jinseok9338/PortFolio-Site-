@@ -615,6 +615,8 @@ dependencies = [
  "gloo 0.7.0",
  "gloo-console",
  "gloo-utils",
+ "serde",
+ "serde_derive",
  "yew",
  "yew-router",
 ]
