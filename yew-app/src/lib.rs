@@ -1,10 +1,13 @@
 
 mod routes;
 mod components;
+mod pages;
+
 
 use yew::prelude::*;
 use yew_router::prelude::*;
 use routes::{Route, switch};
+
 
 
 
@@ -26,13 +29,14 @@ impl Component for App  {
     
     fn view(&self ,_ctx: &Context<Self>) -> Html {
         html! {
-            <BrowserRouter>
-            <header/>    
-            <main>
+        <BrowserRouter>
+            <div>
+                
+                <main>
                     <Switch<Route> render={Switch::render(switch)}  />
                 </main>
-                
-            </BrowserRouter>
+            </div>
+        </BrowserRouter>
          }
     }
 }
