@@ -4,7 +4,7 @@
 use yew_router::prelude::*;
 use yew::prelude::*;
 use super::pages::landingPages::LandingPages;
-use super::components::header::Header;
+
 
 #[derive(Clone, Routable, PartialEq)]
 pub enum Route {

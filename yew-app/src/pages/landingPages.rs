@@ -1,4 +1,7 @@
+use crate::components;
+
 use yew::prelude::*;
+use components::header::Header;
 
 pub struct LandingPages;
 
@@ -9,13 +12,13 @@ impl Component for LandingPages {
     type Message = Msg;
     type Properties = ();
 
-    fn create(ctx: &Context<Self>) -> Self {
+    fn create(_ctx: &Context<Self>) -> Self {
         Self
     }
 
     fn view(&self, ctx: &Context<Self>) -> Html {
         html! {
-            <h1>{"This is landing Pages"}</h1>
+            <Header/>
         }
     }
 }
