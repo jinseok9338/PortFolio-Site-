@@ -1,18 +1,12 @@
 use yew::prelude::*;
 
 
-#[derive(Properties, PartialEq)]
-pub struct HeaderProps {
-    pub level: u8,
-   
-}
 
-
-#[function_component(Header)]
-pub fn header(props: &HeaderProps) ->Html {
+#[function_component(HeaderContents)]
+pub fn header_contents() ->Html {
  html!{
-     <div>
-
+     <div class={classes!("header-container","w-screen","md:hidden","bg-[black]","h-[30px]")}>
+        <h1>{"This is header"}</h1>
      </div>
  }
 }

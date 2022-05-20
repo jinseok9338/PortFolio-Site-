@@ -7,6 +7,7 @@ use yew_router::prelude::*;
 use routes::{Route, switch};
 
 
+
 pub struct App {
 
 }
@@ -26,9 +27,11 @@ impl Component for App  {
     fn view(&self ,_ctx: &Context<Self>) -> Html {
         html! {
             <BrowserRouter>
-                <main>
+            <header/>    
+            <main>
                     <Switch<Route> render={Switch::render(switch)}  />
                 </main>
+                
             </BrowserRouter>
          }
     }
