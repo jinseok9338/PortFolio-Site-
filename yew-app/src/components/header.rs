@@ -4,15 +4,17 @@ use yew::prelude::*;
 
 #[function_component(HeaderContents)]
 pub fn header_contents() ->Html {
-    let color_theme = use_state(|| "LightMode".to_string());
-    let toggle_theme = Callback::from(move |_| 
+    let color_theme = use_state(|| Some(String::from("LightMode")));
+    
+    
+    let toggle_theme = Callback::from(move |_:Option<String>| 
         {   
             let cloned_color_theme = color_theme.clone();
-            let new_theme = if *cloned_color_theme == "LightMode".to_string() { "DarkMode".to_string() } else { "LightMode".to_string() };
+            let new_theme : Option<String> = if cloned_color_theme.unwrap().as_ref().eq(&String::from("LightMode")) { Some(String::from("DarkMode")) } else { Some(String::from("LightMode")) };
             cloned_color_theme.set(new_theme)
-        
         });
-       
+
+   
  html!{
         <div class={classes!("flex", "h-full","w-full","pt-4","pb-4","pl-16","pr-16")}>
             <div class={classes!("left-container","h-full","w-16","bg-[#eb4034]","flex","items-center","justify-center")}>
@@ -27,12 +29,12 @@ pub fn header_contents() ->Html {
                         <li class={classes!("inline-block","ml-[1rem]")}><a href="#">{"Resume"}</a></li>
                         <li class={classes!("inline-block","ml-[1rem]")}><a href="#">{"Contact"}</a></li>
                         <li class={classes!("inline-block","ml-auto")}>
-                        if  &*color_theme.clone() == &"LightMode"  {
-                            <i class="uil uil-sunset"></i>
-                        }else{
-                            <i class="uil uil-moon"></i>
-                        }
-                        <button  onclick={toggle_theme}>{*color_theme.clone()}</button>
+                        // if  &*color_theme.unwrap() == Some(String::from("LigntMode")).unwrap()  {
+                        //     <i class="uil uil-sunset"></i>
+                        // }else{
+                        //     <i class="uil uil-moon"></i>
+                        // }
+                        <button  >{*color_theme.unwrap()}</button>
                         </li>
                     </ul>
                 </div>
