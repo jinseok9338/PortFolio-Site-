@@ -15,7 +15,7 @@ pub enum Route {
 
 }
 
-pub fn switch(routes: &Route) -> Html {
+pub fn switch(routes: &Route , ctx: &Context<Self>) -> Html {
     match routes {
         Route::Home => html! {   <LandingPages/>   },
         Route::User { user_id } => html! { <h1>{ user_id }</h1> }
