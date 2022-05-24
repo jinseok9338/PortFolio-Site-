@@ -1,2 +1,2 @@
 cd tailwind-yew-builder
-docker-compose up dev //for building tailwind css
+docker-compose up dev //for building tailwind css 

@@ -4,13 +4,12 @@ use yew::prelude::*;
 
 #[function_component(HeaderContents)]
 pub fn header_contents() ->Html {
-    let color_theme = use_state(|| Some(String::from("LightMode")));
+    let color_theme = use_state(|| "LightMode".to_owned());
+    let cloned_color_theme = color_theme.clone();
     
-    
-    let toggle_theme = Callback::from(move |_:Option<String>| 
+    let toggle_theme = Callback::from(move |_| 
         {   
-            let cloned_color_theme = color_theme.clone();
-            let new_theme : Option<String> = if cloned_color_theme.unwrap().as_ref().eq(&String::from("LightMode")) { Some(String::from("DarkMode")) } else { Some(String::from("LightMode")) };
+            let new_theme  = if &*cloned_color_theme == &"LightMode".to_owned() { "DarkMode".to_owned() } else { "LightMode".to_owned() };
             cloned_color_theme.set(new_theme)
         });
 
@@ -34,7 +33,7 @@ pub fn header_contents() ->Html {
                         // }else{
                         //     <i class="uil uil-moon"></i>
                         // }
-                        <button  >{*color_theme.unwrap()}</button>
+                        <button onclick={toggle_theme} >{&*color_theme}</button>
                         </li>
                     </ul>
                 </div>
