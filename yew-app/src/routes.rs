@@ -3,7 +3,7 @@
 
 use yew_router::prelude::*;
 use yew::prelude::*;
-use super::pages::landingPages::LandingPages;
+use super::pages::landing_pages::LandingPages;
 
 
 #[derive(Clone, Routable, PartialEq)]

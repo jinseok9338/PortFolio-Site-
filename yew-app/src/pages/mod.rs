@@ -1,1 +1,1 @@
-pub mod landingPages;
+pub mod landing_pages;

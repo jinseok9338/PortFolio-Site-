@@ -1,5 +1,5 @@
 use yew::prelude::*;
-use gloo::console::log;
+
 
 
 
