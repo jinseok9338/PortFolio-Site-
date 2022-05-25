@@ -1,4 +1,8 @@
 use yew::prelude::*;
+use crate::theme::theme::{Theme};
+
+
+
 
 
 
@@ -7,6 +11,8 @@ use yew::prelude::*;
 pub fn header_contents() ->Html {
     let color_theme = use_state(|| "LightMode".to_owned());
     let cloned_color_theme = color_theme.clone();
+    let _theme = use_context::<Theme>().expect("no ctx found");
+    
     
     let toggle_theme = Callback::from(move |_| 
         {   
@@ -49,9 +55,13 @@ pub struct Header {
    
 }
 
+
+
 impl Component for Header {
     type Message = ();
     type Properties = ();
+
+    
 
     fn create(_ctx: &Context<Self>) -> Self {
         Self{}
@@ -59,8 +69,13 @@ impl Component for Header {
 
   
 
-    fn view(&self, _ctx: &Context<Self>) -> Html {
-       
+    fn view(&self, ctx: &Context<Self>) -> Html {
+
+        let (_theme, _) = ctx
+        .link()
+        .context::<Theme>(Callback::noop())
+        .expect("context to be set");
+     
         html! {
             <nav class={classes!("header-container","w-screen","md:block","hidden","h-[100px]")}>
             <HeaderContents/>

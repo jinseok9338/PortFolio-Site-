@@ -13,3 +13,5 @@ serde = { version = "1.0.137", features = ["derive"] }
 serde_derive = "1.0.137"
 yew = "0.19.3"
 yew-router = "0.16.0"
+weblog = { version = "0.3", default-features = false, features = ["stdweb"] }
+
