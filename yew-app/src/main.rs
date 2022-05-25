@@ -3,10 +3,10 @@ mod pages;
 mod theme;
 
 use yew::prelude::*;
-use yew::ContextProvider;
+
 
 use pages::landing_pages::LandingPages;
-use crate::theme::theme::ThemeProvider;
+use theme::ThemeProvider; 
 
 
 
@@ -17,7 +17,7 @@ pub fn app() -> Html {
     html! {
         <ThemeProvider>
             <LandingPages />  
-        </ThemeProvider>
+        </ThemeProvider> 
      }
 }
 

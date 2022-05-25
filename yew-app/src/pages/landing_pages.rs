@@ -1,11 +1,11 @@
-use crate::{components, theme::theme::Theme};
+use crate::{components};
 
 use yew::prelude::*;
 use components::header::Header;
 
 #[derive(PartialEq, Properties)]
 pub struct LandingPagesProps {
-    pub theme: Theme,
+   
 }
 
 pub struct LandingPages {

@@ -3,3 +3,5 @@ docker-compose up dev //for building tailwind css
 
 1. Server side render the icons -- not possible in yew in 0.19 may be move to the Next version. ... but maybe later 
 2. css with the plain css rather than the tailwind css
+https://trunkrs.dev/assets/
+3. seperate header contents from the header
