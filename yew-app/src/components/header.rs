@@ -6,18 +6,19 @@ use crate::theme::theme::{Theme};
 
 
 
-
 #[function_component(HeaderContents)]
 pub fn header_contents() ->Html {
-    let color_theme = use_state(|| "LightMode".to_owned());
-    let cloned_color_theme = color_theme.clone();
-    let _theme = use_context::<Theme>().expect("no ctx found");
+
+
+    let color_themes = use_context::<Theme>().expect("no ctx found");
+    let current_color_theme =  use_context::<UseStateHandle<String>>().expect("no ctx found");
     
-    
+    let cloned_current_color_theme = current_color_theme.clone();
+
     let toggle_theme = Callback::from(move |_| 
         {   
-            let new_theme  = if &*cloned_color_theme == &"LightMode".to_owned() {"DarkMode".to_owned() } else { "LightMode".to_owned() };
-            cloned_color_theme.set(new_theme);
+            let new_theme  = if &*cloned_current_color_theme == &"LightMode".to_owned() {"DarkMode".to_owned() } else { "LightMode".to_owned() };
+            cloned_current_color_theme.set(new_theme);
         });
 
    
@@ -35,12 +36,12 @@ pub fn header_contents() ->Html {
                         <li class={classes!("inline-block","ml-[1rem]")}><a href="#">{"Resume"}</a></li>
                         <li class={classes!("inline-block","ml-[1rem]")}><a href="#">{"Contact"}</a></li>
                         <li class={classes!("inline-block","ml-auto")}>
-                        if  &*color_theme == &"LightMode".to_owned()  {
+                        if  &*current_color_theme == &"LightMode".to_owned()  {
                             <i class="uil uil-sunset text-[2rem]"></i>
                         }else{
                             <i class="uil uil-moon"></i>
                         }
-                        <button onclick={toggle_theme} >{&*color_theme}</button>
+                        <button onclick={toggle_theme} >{&*current_color_theme}</button>
                         </li>
                     </ul>
                 </div>
@@ -71,10 +72,7 @@ impl Component for Header {
 
     fn view(&self, ctx: &Context<Self>) -> Html {
 
-        let (_theme, _) = ctx
-        .link()
-        .context::<Theme>(Callback::noop())
-        .expect("context to be set");
+
      
         html! {
             <nav class={classes!("header-container","w-screen","md:block","hidden","h-[100px]")}>

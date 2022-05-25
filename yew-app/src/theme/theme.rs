@@ -1,3 +1,5 @@
+use std::fmt;
+
 
 
 
@@ -9,10 +11,17 @@ pub struct ColorTheme {
     contrast_color: String,
 
 }
+
 #[derive(Clone, PartialEq,Debug)]
 pub struct Theme {
     dark_theme: ColorTheme,
     light_theme: ColorTheme,
+}
+
+impl fmt::Display for Theme {
+    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
+      write!(f, "{:?} <{:?}>", self.dark_theme, self.light_theme)
+    }
 }
 
 
