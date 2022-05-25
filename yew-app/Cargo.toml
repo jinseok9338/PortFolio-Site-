@@ -14,4 +14,6 @@ serde_derive = "1.0.137"
 yew = "0.19.3"
 yew-router = "0.16.0"
 weblog = { version = "0.3", default-features = false, features = ["stdweb"] }
-
+stylist = { version = "0.10.0",features = ["yew_integration"]}
+once_cell = "1.8.0"
+console_log = { version = "0.2.0", features = ["color"] }
