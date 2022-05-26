@@ -29,9 +29,6 @@ pub fn header_contents() ->Html {
     let class = hero_style();
 
 
-
-
-   
  html!{
 <div {class}>
     // <!-- **** Hero Section **** -->
