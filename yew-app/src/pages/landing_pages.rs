@@ -1,7 +1,8 @@
-use crate::{components};
+use crate::{components, pages::global_style::global_style};
+use stylist::yew::Global;
 
 use yew::prelude::*;
-use components::header::Header;
+use components::hero::Header;
 
 #[derive(PartialEq, Properties)]
 pub struct LandingPagesProps {
@@ -25,8 +26,12 @@ impl Component for LandingPages {
     }
 
     fn view(&self, _ctx: &Context<Self>) -> Html {
+        let global_style_css = global_style();
         html! {
-            <Header/>
+            <>
+                <Global css={global_style_css}/>
+                <Header/>
+            </>
         }
     }
 }
