@@ -7,7 +7,7 @@ use crate::components::hero_style::hero_style;
 
 
 
-
+//https://github.com/cobiwave/simplefolio/blob/master/src/sass/base/_typography.scss
 
 #[function_component(HeaderContents)]
 pub fn header_contents() ->Html {
