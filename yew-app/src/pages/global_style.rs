@@ -9,6 +9,34 @@ pub fn global_style () -> StyleSource<'static> {
       html.sr .load-hidden {
         visibility: hidden;
       }
+
+      h1 {
+        font-weight: 700;
+      }
+      
+      p,
+      a {
+        font-family: "Montserrat", sans-serif;
+        font-size: 1.6rem;
+      }
+      
+      a,
+      a:link,
+      a:hover,
+      a:visited,
+      a:active {
+        text-decoration: none;
+      }
+      
+      a:hover {
+        transition: all 0.3s ease-in-out;
+      }
+
+      .dummy {
+        width: 100vw;
+        height: 43vh;
+      }
+
     "# );
     
     global_style

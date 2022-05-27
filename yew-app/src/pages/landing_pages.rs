@@ -30,6 +30,7 @@ impl Component for LandingPages {
         html! {
             <>
                 <Global css={global_style_css}/>
+                <div class="dummy"/>
                 <Header/>
             </>
         }
