@@ -11,21 +11,21 @@ use crate::components::hero_style::hero_style;
 
 #[function_component(HeaderContents)]
 pub fn header_contents() ->Html {
-    // let theme = use_theme();
-    // let active = use_state(|| "active");
-    // let page_names = vec!["Home","Contact","About"];
+    let theme = use_theme();
+    let active = use_state(|| "active");
+    let page_names = vec!["Home","Contact","About"];
 
-    // let theme_str = match theme.kind() {
-    //     ThemeKind::Light => "Dark Theme",
-    //     ThemeKind::Dark => "Light Theme",
-    // };
+    let theme_str = match theme.kind() {
+        ThemeKind::Light => "Dark Theme",
+        ThemeKind::Dark => "Light Theme",
+    };
 
-    // let other_theme = match theme.kind() {
-    //     ThemeKind::Light => ThemeKind::Dark,
-    //     ThemeKind::Dark => ThemeKind::Light,
-    // };
+    let other_theme = match theme.kind() {
+        ThemeKind::Light => ThemeKind::Dark,
+        ThemeKind::Dark => ThemeKind::Light,
+    };
 
-    // let switch_theme = Callback::from(move |_:String| theme.set(other_theme.clone()));
+    let switch_theme = Callback::from(move |_:String| theme.set(other_theme.clone()));
     let class = hero_style();
 
 
@@ -41,18 +41,19 @@ pub fn header_contents() ->Html {
             {" I'm the Web Developer."}
             </h1>   
         </div>
-            <p class="hero-cta">
-                <a  href="#">
-                {"  Know more"}
+            <div class="hero-cta-div">
+                <a href="#">
+                {"Know more"}
                 </a>
-            </p>
+                <button>{"Switch to "}{theme_str}</button>
+            </div>
     </div>
     // <!-- /END Hero Section -->
 </div>
  }
 }
 
-
+//https://alvarotrigo.com/blog/css-text-animations/
 
 
 // <button class={css!(r#"color: white;
@@ -65,13 +66,13 @@ pub fn header_contents() ->Html {
 // "#)} onclick={switch_theme} id="yew-sample-button">{"Switch to "}{theme_str}</button>
 
 
-pub struct Header {
+pub struct Hero {
    
 }
 
 
 
-impl Component for Header {
+impl Component for Hero {
     type Message = ();
     type Properties = ();
 
@@ -88,9 +89,9 @@ impl Component for Header {
 
      
         html! {
-            <nav class={classes!("header-container","w-screen","md:block","hidden","h-[100px]")}>
-            <HeaderContents/>
-         </nav >
+            <>
+            <Hero/>
+         </>
         }
     }
 }

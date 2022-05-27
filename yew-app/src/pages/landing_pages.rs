@@ -2,7 +2,8 @@ use crate::{components, pages::global_style::global_style};
 use stylist::yew::Global;
 
 use yew::prelude::*;
-use components::hero::Header;
+use components::hero::Hero;
+use components::about::About;
 
 #[derive(PartialEq, Properties)]
 pub struct LandingPagesProps {
@@ -31,7 +32,8 @@ impl Component for LandingPages {
             <>
                 <Global css={global_style_css}/>
                 <div class="dummy"/>
-                <Header/>
+                <Hero/>
+                <About/>
             </>
         }
     }

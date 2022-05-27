@@ -31,15 +31,21 @@ pub fn hero_style () -> StyleSource<'static> {
     text-align: left;
   }
 
-  #hero .hero-cta {
+  #hero .hero-cta-div{
     display: flex;
-    animation: from_above 1s;
-    animation-delay: 10s;
-    animation-fill-mode: forwards;
   }
 
-  #hero .hero-cta a {
+  #hero .hero-cta-div a {
+    animation: fade-in 0.8s 10s forwards cubic-bezier(0.11, 0, 0.5, 0);
     font-size: 2.4rem;
+    }
+
+
+  #hero .hero-cta-div button {
+    border-radius: 5px;
+    font-size: 2.4rem;
+    border: none;
+    background-color: rgb(88, 164, 255);
   }
 
 
@@ -67,12 +73,10 @@ pub fn hero_style () -> StyleSource<'static> {
     width:fit-content; 
   }
 
-  @keyframes from_above {
-    from {
-      opacity: 0;
-    }
-    to {
+  @keyframes fade-in {
+    100% {
       opacity: 1;
+      filter: blur(0);
     }
   }
 
