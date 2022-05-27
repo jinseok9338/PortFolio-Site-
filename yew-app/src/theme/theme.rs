@@ -5,6 +5,7 @@ use stylist::yew::styled_component;
 use yew::html::ImplicitClone;
 use yew::prelude::*;
 
+
 #[derive(Debug, Clone, PartialEq)]
 pub(crate) enum ThemeKind {
     Dark,
@@ -79,6 +80,7 @@ impl PartialEq for ThemeContext {
 pub(crate) struct ThemeProviderProps {
     pub children: Children,
 }
+
 
 #[styled_component(ThemeProvider)]
 pub(crate) fn theme_provider(props: &ThemeProviderProps) -> Html {

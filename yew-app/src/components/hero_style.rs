@@ -54,7 +54,7 @@ pub fn hero_style () -> StyleSource<'static> {
     white-space:nowrap;
     overflow:hidden;
     animation:typing 4s steps(20,end) forwards,
-              blink 5s ;
+              blink 5s;
   }
 
   #hero .text-typing2 {
@@ -62,9 +62,9 @@ pub fn hero_style () -> StyleSource<'static> {
     margin:0px;
     white-space:nowrap;
     overflow:hidden;
-    animation:typing 4s steps(22,end) forwards,
-              blink 5s, show 1s infinite;
-    animation-delay: 5s
+    animation:typing 6s steps(15,end) forwards,
+              blink 8s infinite, show 1s infinite;
+    animation-delay: 5s;
   }
 
 

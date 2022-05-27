@@ -9,12 +9,9 @@ use crate::components::hero_style::hero_style;
 
 //https://github.com/cobiwave/simplefolio/blob/master/src/sass/base/_typography.scss
 
-#[function_component(HeaderContents)]
-pub fn header_contents() ->Html {
+#[function_component(Hero)]
+pub fn hero() ->Html {
     let theme = use_theme();
-    let active = use_state(|| "active");
-    let page_names = vec!["Home","Contact","About"];
-
     let theme_str = match theme.kind() {
         ThemeKind::Light => "Dark Theme",
         ThemeKind::Dark => "Light Theme",
@@ -25,7 +22,7 @@ pub fn header_contents() ->Html {
         ThemeKind::Dark => ThemeKind::Light,
     };
 
-    let switch_theme = Callback::from(move |_:String| theme.set(other_theme.clone()));
+    let switch_theme = Callback::from(move |_| theme.set(other_theme.clone()));
     let class = hero_style();
 
 
@@ -45,7 +42,7 @@ pub fn header_contents() ->Html {
                 <a href="#">
                 {"Know more"}
                 </a>
-                <button>{"Switch to "}{theme_str}</button>
+                <button onclick={switch_theme}>{"Switch to "}{theme_str}</button>
             </div>
     </div>
     // <!-- /END Hero Section -->
@@ -66,32 +63,3 @@ pub fn header_contents() ->Html {
 // "#)} onclick={switch_theme} id="yew-sample-button">{"Switch to "}{theme_str}</button>
 
 
-pub struct Hero {
-   
-}
-
-
-
-impl Component for Hero {
-    type Message = ();
-    type Properties = ();
-
-    
-
-    fn create(_ctx: &Context<Self>) -> Self {
-        Self{}
-    }
-
-  
-
-    fn view(&self, _ctx: &Context<Self>) -> Html {
-
-
-     
-        html! {
-            <>
-            <Hero/>
-         </>
-        }
-    }
-}
