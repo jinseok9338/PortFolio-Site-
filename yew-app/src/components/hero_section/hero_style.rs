@@ -1,21 +1,21 @@
 use stylist::StyleSource;
 
-
-pub fn hero_style () -> StyleSource<'static> {
-  let hero_style = stylist::css!(r#"
+pub fn hero_style() -> StyleSource<'static> {
+    let hero_style = stylist::css!(
+        r#"
 
 
   #hero {
     min-height: 100vh;
     height: 100vh;
-    display: flex;
+    display: flex; 
     flex-direction:column;
     align-items: start;
     justify-content: start;
     border-bottom: 0px;
     font-weight: 400;
-    color: #272341;
-    padding: 0rem 4rem; 
+    color: #272341; 
+    padding: 0rem 4rem;  
     margin-bottom: 0;
    
     z-index: -1;
@@ -141,19 +141,8 @@ pub fn hero_style () -> StyleSource<'static> {
     }
   }
  
-  "#);
+  "#
+    );
 
-  return hero_style
+    return hero_style;
 }
-
-
-
-
-
-
-
-
-
-
-
-

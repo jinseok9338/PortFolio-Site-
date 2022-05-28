@@ -1,8 +1,8 @@
 use stylist::StyleSource;
 
-
-pub fn about_style () -> StyleSource<'static> {
-  let about_style = stylist::css!(r#"
+pub fn about_style() -> StyleSource<'static> {
+    let about_style = stylist::css!(
+        r#"
 
   #about {
     background-color: #02aab0;
@@ -13,6 +13,8 @@ pub fn about_style () -> StyleSource<'static> {
     -webkit-clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
     clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
     padding-bottom: 10%;
+    display:flex;
+    justify-content: center;
  }
 
   #about .about-wrapper__image {
@@ -93,6 +95,7 @@ pub fn about_style () -> StyleSource<'static> {
    }
  }
 
-  "#);
-  return about_style
+  "#
+    );
+    return about_style;
 }

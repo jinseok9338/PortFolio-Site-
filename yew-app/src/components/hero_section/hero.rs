@@ -1,20 +1,16 @@
-use yew::prelude::*;
 use crate::theme::theme::{use_theme, ThemeKind};
+use yew::prelude::*;
 
 use crate::components::hero_section::hero_style::hero_style;
-
-
-
-
 
 //https://github.com/cobiwave/simplefolio/blob/master/src/sass/base/_typography.scss
 
 #[function_component(Hero)]
-pub fn hero() ->Html {
+pub fn hero() -> Html {
     let theme = use_theme();
     let theme_str = match theme.kind() {
         ThemeKind::Light => "Dark Theme",
-        ThemeKind::Dark => "Light Theme", 
+        ThemeKind::Dark => "Light Theme",
     };
 
     let other_theme = match theme.kind() {
@@ -25,27 +21,25 @@ pub fn hero() ->Html {
     // let switch_theme = Callback::from(move |_| theme.set(other_theme.clone()));
     let class = hero_style();
 
-
- html!{
-<div {class}>
-    // <!-- **** Hero Section **** --> 
-    <div id="hero">
-        <div>
-            <h1 class="text-typing hero-title">
-            {"My name is"} <span class="text-color-main">{" Jason"}</span>
-            </h1>
-            <h1 class="text-typing2 hero-title show">
-            {" I'm the Web Developer."}
-            </h1>   
+    html! {
+    <div {class}>
+        // <!-- **** Hero Section **** -->
+        <div id="hero">
+            <div>
+                <h1 class="text-typing hero-title">
+                {"My name is"} <span class="text-color-main">{" Jason"}</span>
+                </h1>
+                <h1 class="text-typing2 hero-title show">
+                {" I'm the Web Developer."}
+                </h1>
+            </div>
         </div>
-    </div> 
-    // <!-- /END Hero Section -->
-</div>
- }
+        // <!-- /END Hero Section -->
+    </div>
+     }
 }
 
 //https://alvarotrigo.com/blog/css-text-animations/
-
 
 // <button class={css!(r#"color: white;
 // height: 50px;
@@ -55,5 +49,3 @@ pub fn hero() ->Html {
 // border-radius: 5px;
 // border: none;
 // "#)} onclick={switch_theme} id="yew-sample-button">{"Switch to "}{theme_str}</button>
-
-

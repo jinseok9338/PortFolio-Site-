@@ -1,5 +1,5 @@
 use yew::prelude::*;
-use crate::components::about_style::about_style;
+use crate::components::about_section::about_style::about_style;
 #[function_component(About)]
 pub fn about() ->Html {
 

@@ -1,27 +1,21 @@
 use crate::{components, pages::global_style::global_style};
 use stylist::yew::Global;
 
-use yew::prelude::*;
+use components::about_section::about::About;
 use components::hero_section::hero::Hero;
 use components::hero_section::hey::Hey;
-use components::about::About;
+use yew::prelude::*;
 
 #[derive(PartialEq, Properties)]
-pub struct LandingPagesProps {
-   
-}
+pub struct LandingPagesProps {}
 
-pub struct LandingPages {
-    
-}
+pub struct LandingPages {}
 
-
-pub enum Msg {
-}
+pub enum Msg {}
 
 impl Component for LandingPages {
     type Message = Msg;
-    type Properties =();
+    type Properties = ();
 
     fn create(_ctx: &Context<Self>) -> Self {
         Self {}

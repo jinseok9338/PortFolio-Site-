@@ -10,6 +10,6 @@ pub fn hey() ->HTML {
         <div class="content">
             <h2 class="text_shadows">{"hey"}</h2>
         </div>
-    </div>
+    </div> 
     }
 }
