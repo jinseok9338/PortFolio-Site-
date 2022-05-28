@@ -1,10 +1,5 @@
 ## A minimal portfolio template for Developers!
 
-<h2 align="center">
-  <img src="https://github.com/cobidev/gatsby-simplefolio/blob/master/examples/example.gif" alt="Simplefolio" width="600px" />
-  <br>
-</h2>
-
 This is the cloned project. The original project is this : https://github.com/cobiwave/simplefolio
 
 I have ported the project with the Yew Framework.
