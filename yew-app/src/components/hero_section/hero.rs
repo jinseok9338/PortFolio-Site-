@@ -1,7 +1,7 @@
 use yew::prelude::*;
 use crate::theme::theme::{use_theme, ThemeKind};
 
-use crate::components::hero_style::hero_style;
+use crate::components::hero_section::hero_style::hero_style;
 
 
 
@@ -22,7 +22,7 @@ pub fn hero() ->Html {
         ThemeKind::Dark => ThemeKind::Light,
     };
 
-    let switch_theme = Callback::from(move |_| theme.set(other_theme.clone()));
+    // let switch_theme = Callback::from(move |_| theme.set(other_theme.clone()));
     let class = hero_style();
 
 
@@ -38,12 +38,6 @@ pub fn hero() ->Html {
             {" I'm the Web Developer."}
             </h1>   
         </div>
-            <div class="hero-cta-div">
-                <a href="#">
-                {"Know more"}
-                </a>
-                <button onclick={switch_theme}>{"Switch to "}{theme_str}</button>
-            </div>
     </div> 
     // <!-- /END Hero Section -->
 </div>

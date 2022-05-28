@@ -4,6 +4,7 @@ pub fn global_style () -> StyleSource<'static> {
     let global_style = stylist::css!(r#"
     html {
         font-size: 62.5%;
+        background-color:#33CCFF
       }
       
       html.sr .load-hidden {
@@ -34,7 +35,7 @@ pub fn global_style () -> StyleSource<'static> {
 
       .dummy {
         width: 100vw;
-        height: 43vh;
+        height: 13vh;
       }
 
     "# );

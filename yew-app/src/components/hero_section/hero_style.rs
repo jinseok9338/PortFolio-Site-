@@ -11,12 +11,11 @@ pub fn hero_style () -> StyleSource<'static> {
     display: flex;
     flex-direction:column;
     align-items: start;
-    jusfity-content: center;
+    justify-content: start;
     border-bottom: 0px;
-    background: #fff;
     font-weight: 400;
     color: #272341;
-    padding: 0rem 5.6rem;
+    padding: 0rem 4rem; 
     margin-bottom: 0;
    
     z-index: -1;
@@ -51,8 +50,8 @@ pub fn hero_style () -> StyleSource<'static> {
     margin:0px;
     white-space:nowrap;
     overflow:hidden;
-    animation:typing 5s steps(19,end) forwards,
-              blink 0.3s 17;
+    animation:typing 2s steps(19,end) forwards,
+              blink 0.2s 10;
   }
 
   #hero .text-typing2 {
@@ -60,9 +59,9 @@ pub fn hero_style () -> StyleSource<'static> {
     margin:0px;
     white-space:nowrap;
     overflow:hidden;
-    animation:typing 6s steps(15,end) forwards,
-      blink 0.3s infinite, show 1s infinite;
-    animation-delay: 5s;
+    animation:typing 2s steps(15,end) forwards,
+      blink 0.2s infinite, show 1s infinite;
+    animation-delay: 2s;
   }
 
 
