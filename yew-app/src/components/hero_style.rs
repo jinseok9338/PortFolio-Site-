@@ -35,13 +35,11 @@ pub fn hero_style () -> StyleSource<'static> {
     display: flex;
   }
 
-  #hero .hero-cta-div a {
-    animation: fade-in 0.8s 10s forwards cubic-bezier(0.11, 0, 0.5, 0);
-    font-size: 2.4rem;
-    }
+
 
 
   #hero .hero-cta-div button {
+    margin-left: 1rem;
     border-radius: 5px;
     font-size: 2.4rem;
     border: none;
@@ -53,8 +51,8 @@ pub fn hero_style () -> StyleSource<'static> {
     margin:0px;
     white-space:nowrap;
     overflow:hidden;
-    animation:typing 4s steps(20,end) forwards,
-              blink 5s;
+    animation:typing 5s steps(19,end) forwards,
+              blink 0.3s 17;
   }
 
   #hero .text-typing2 {
@@ -63,7 +61,7 @@ pub fn hero_style () -> StyleSource<'static> {
     white-space:nowrap;
     overflow:hidden;
     animation:typing 6s steps(15,end) forwards,
-              blink 8s infinite, show 1s infinite;
+      blink 0.3s infinite, show 1s infinite;
     animation-delay: 5s;
   }
 

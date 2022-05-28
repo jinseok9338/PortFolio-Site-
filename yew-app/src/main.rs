@@ -7,11 +7,11 @@ use yew::prelude::*;
 
 use pages::landing_pages::LandingPages;
 use theme::ThemeProvider; 
-
+ 
 
 
 /// Main component
-#[function_component(App)]
+#[function_component(App)] 
 pub fn app() -> Html {
  
     html! {

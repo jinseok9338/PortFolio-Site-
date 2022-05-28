@@ -14,7 +14,7 @@ pub fn hero() ->Html {
     let theme = use_theme();
     let theme_str = match theme.kind() {
         ThemeKind::Light => "Dark Theme",
-        ThemeKind::Dark => "Light Theme",
+        ThemeKind::Dark => "Light Theme", 
     };
 
     let other_theme = match theme.kind() {
@@ -32,7 +32,7 @@ pub fn hero() ->Html {
     <div id="hero">
         <div>
             <h1 class="text-typing hero-title">
-            {"Hi, my name is"} <span class="text-color-main">{" Jason"}</span>
+            {"My name is"} <span class="text-color-main">{" Jason"}</span>
             </h1>
             <h1 class="text-typing2 hero-title show">
             {" I'm the Web Developer."}
@@ -44,7 +44,7 @@ pub fn hero() ->Html {
                 </a>
                 <button onclick={switch_theme}>{"Switch to "}{theme_str}</button>
             </div>
-    </div>
+    </div> 
     // <!-- /END Hero Section -->
 </div>
  }
