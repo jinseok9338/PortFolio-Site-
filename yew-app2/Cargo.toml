@@ -7,3 +7,8 @@ edition = "2021"
 
 [dependencies]
 yew = "0.19"
+once_cell = "1.8.0"
+stylist = { version="0.10.0", features = [
+    "yew_integration",
+    "yew_use_style",
+] }
