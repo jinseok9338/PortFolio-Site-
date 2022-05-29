@@ -1,37 +1,33 @@
 mod components;
+mod global_style;
 mod hooks;
 mod sections;
 
 use components::theme_button::ThemeButton;
+use global_style::GlobalStyle;
 use hooks::theme_context::ThemeProvider;
 use sections::about::About;
 use sections::contacts::Contacts;
 use sections::footer::Footer;
 use sections::hero::Hero;
 use sections::projects::Projects;
-use stylist::css;
-use stylist::yew::Global;
-use yew::{function_component, html};
 
-use crate::hooks::theme_context::use_theme;
+use yew::{function_component, html};
 
 #[function_component(App)]
 fn app() -> Html {
-    let theme = use_theme();
-    let background_color = &theme.clone().primary_background_color;
-
     html! {
     <>
-        <Global css={css!("background-color:${bg};",bg=background_color)}/>
-            <ThemeProvider>
+        <ThemeProvider>
+            // <GlobalStyle>
                 <ThemeButton/>
                 <Hero/>
                 <About/>
                 <Projects/>
                 <Contacts/>
                 <Footer/>
-            </ThemeProvider>
-
+            // </GlobalStyle>
+        </ThemeProvider>
     </>
     }
 }

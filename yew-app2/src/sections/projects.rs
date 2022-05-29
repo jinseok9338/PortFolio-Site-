@@ -178,6 +178,7 @@ pub fn projects() -> HTML {
              // <!-- /END Project -->
             </div>
           </div>
+          <div class={classes!("dummy",css!("background: ${bg};",bg=background_color.clone()))}/>
         </section>
         //<!-- /END Projects Section -->
     }

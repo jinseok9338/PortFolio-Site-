@@ -25,7 +25,10 @@ pub fn theme_button() -> HTML {
     let switch_theme = Callback::from(move |_| theme.set(other_theme.clone()));
 
     html! {
-        <div id="theme-toggler" onclick={switch_theme} class={css!("background: ${bg}; ",bg=background_color.clone())}>
+        <div id="theme-toggler" onclick={switch_theme} class={css!(
+            r#"
+            background: ${bg};"#
+        ,bg=background_color.clone())}>
         if &theme_str == &"Dark Theme"{
             <i class={classes!("fa" ,"fa-moon-o",css!("color: ${font_color};",font_color=font_color.clone()))} aria-hidden="true"></i>
         } else{ <i class={classes!("fa" ,"fa-sun-o",css!("color: ${font_color};",font_color=font_color.clone()))} aria-hidden="true"></i>}
