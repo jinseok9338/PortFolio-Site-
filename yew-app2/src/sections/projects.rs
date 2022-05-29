@@ -1,12 +1,7 @@
 use crate::hooks::theme_context::use_theme;
+use crate::util::project_data::project_data;
 use stylist::css;
 use yew::prelude::*;
-
-struct ProjectsType {
-    project_title: String,
-    project_description: String,
-    src: String,
-}
 
 #[function_component(Projects)]
 pub fn projects() -> HTML {
@@ -14,11 +9,7 @@ pub fn projects() -> HTML {
     let background_color = &theme.clone().primary_background_color;
     let font_color = &theme.clone().font_color;
 
-    let projects: Vec<ProjectsType> = vec![ProjectsType {
-        project_title: "This is the title".to_string(),
-        project_description: "This is the description".to_string(),
-        src: "https://picsum.photos/675/300".to_string(),
-    }];
+    let projects = project_data();
 
     html! {
        // <!-- **** Projects Section **** -->

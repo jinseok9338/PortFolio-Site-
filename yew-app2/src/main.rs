@@ -2,6 +2,7 @@ mod components;
 mod global_style;
 mod hooks;
 mod sections;
+mod util;
 
 use components::theme_button::ThemeButton;
 use global_style::GlobalStyle;
