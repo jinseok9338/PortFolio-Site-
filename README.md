@@ -6,7 +6,8 @@ I have ported the project with the Yew Framework.
 
 ### Here are things to add.
 
-1. adding theme context so I can switch from light theme to dark theme.
+1. adding theme context so I can switch from light theme to dark theme. [Done]
+1. completing implementing changing theme and hange the color of default dark theme color
 1. make scrolling action using use_ref.
 1. adding more texting animation to Hero Section.
 1. adding animation so things start to appear in view port.
