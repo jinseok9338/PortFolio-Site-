@@ -17,14 +17,14 @@ impl ThemeKind {
     pub fn current(&self) -> &Theme {
         static LIGHT_THEME: Lazy<Theme> = Lazy::new(|| Theme {
             font_color: "#272341".to_string(),
-            background_color: "rgb(237, 244, 255)".to_string(),
-            paper_color: "white".to_string(),
+            primary_background_color: "rgb(237, 244, 255)".to_string(),
+            secondary_background_color: "#02aab0".to_string(),
         });
 
         static DARK_THEME: Lazy<Theme> = Lazy::new(|| Theme {
             font_color: "white".to_string(),
-            background_color: "black".to_string(),
-            paper_color: "rgb(50, 50, 50)".to_string(),
+            primary_background_color: "#333333".to_string(),
+            secondary_background_color: "#012b2c".to_string(),
         });
 
         match self {
@@ -37,8 +37,8 @@ impl ThemeKind {
 #[derive(Debug, Clone)]
 pub(crate) struct Theme {
     pub font_color: String,
-    pub background_color: String,
-    pub paper_color: String,
+    pub primary_background_color: String,
+    pub secondary_background_color: String,
 }
 
 #[derive(Debug, Clone)]

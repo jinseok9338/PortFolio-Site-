@@ -1,10 +1,16 @@
+use crate::hooks::theme_context::use_theme;
+use stylist::css;
 use yew::prelude::*;
 
 #[function_component(Projects)]
 pub fn projects() -> HTML {
+    let theme = use_theme();
+    let background_color = &theme.clone().primary_background_color;
+    let font_color = &theme.clone().font_color;
+
     html! {
        // <!-- **** Projects Section **** -->
-        <section id="projects">
+        <section id="projects" class={css!("background: ${bg}; color: ${font_color};",bg=background_color.clone(),font_color=font_color)}>
           <div class="container">
             <div class="project-wrapper">
               <h2 class="section-title dark-blue-text">{"Projects"}</h2>

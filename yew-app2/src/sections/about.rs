@@ -1,10 +1,26 @@
+use crate::hooks::theme_context::use_theme;
+use stylist::css;
 use yew::prelude::*;
 
 #[function_component(About)]
 pub fn about() -> HTML {
+    let theme = use_theme();
+    let background_colors = &theme.clone();
+    let font_color = &theme.clone().font_color;
+
     html! {
         // <!-- **** About Section **** -->
-        <section id="about">
+        <section id="about" class={classes!(css!("background-image: linear-gradient(
+          135deg,
+          ${primary_color} 0%,
+          ${secondary_color} 100%
+        );
+       
+        color: ${font_color};"
+        ,primary_color=background_colors.primary_background_color.clone(),
+        secondary_color=background_colors.secondary_background_color.clone(),
+        font_color=font_color.clone())
+       )}>
           <div class="container">
             <h2 class="section-title load-hidden">{"About me"}</h2>
             <div class="row about-wrapper">

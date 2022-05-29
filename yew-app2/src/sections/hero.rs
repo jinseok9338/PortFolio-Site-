@@ -5,7 +5,7 @@ use yew::prelude::*;
 #[function_component(Hero)]
 pub fn hero() -> HTML {
     let theme = use_theme();
-    let background_color = &theme.clone().background_color;
+    let background_color = &theme.clone().primary_background_color;
     let font_color = &theme.clone().font_color;
 
     html! {

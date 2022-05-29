@@ -16,7 +16,11 @@ pub fn theme_button() -> HTML {
         ThemeKind::Dark => ThemeKind::Light,
     };
 
-    let background_color = other_theme.clone().current().background_color.to_owned();
+    let background_color = other_theme
+        .clone()
+        .current()
+        .primary_background_color
+        .to_owned();
     let font_color = other_theme.clone().current().font_color.to_owned();
     let switch_theme = Callback::from(move |_| theme.set(other_theme.clone()));
 
