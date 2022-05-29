@@ -97,3 +97,26 @@
 .up i {
   color: #272727;
 }
+
+/* Theme Toggle Button */
+
+#theme-toggler {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  bottom: 15px;
+  right: 25px;
+  // background: $secondary-color;
+  transition: background 0.2s linear;
+  color: $white-color;
+  cursor: pointer;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+  border-radius: 50%;
+  width: 7rem;
+  height: 7rem;
+}
+
+#theme-toggler i {
+  font-size: 4rem;
+}

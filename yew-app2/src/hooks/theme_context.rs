@@ -16,7 +16,7 @@ impl ImplicitClone for ThemeKind {}
 impl ThemeKind {
     pub fn current(&self) -> &Theme {
         static LIGHT_THEME: Lazy<Theme> = Lazy::new(|| Theme {
-            font_color: "black".to_string(),
+            font_color: "#272341".to_string(),
             background_color: "rgb(237, 244, 255)".to_string(),
             paper_color: "white".to_string(),
         });
@@ -38,7 +38,6 @@ impl ThemeKind {
 pub(crate) struct Theme {
     pub font_color: String,
     pub background_color: String,
-
     pub paper_color: String,
 }
 
