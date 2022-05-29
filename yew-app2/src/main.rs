@@ -9,20 +9,29 @@ use sections::contacts::Contacts;
 use sections::footer::Footer;
 use sections::hero::Hero;
 use sections::projects::Projects;
+use stylist::css;
+use stylist::yew::Global;
 use yew::{function_component, html};
+
+use crate::hooks::theme_context::use_theme;
 
 #[function_component(App)]
 fn app() -> Html {
+    let theme = use_theme();
+    let background_color = &theme.clone().primary_background_color;
+
     html! {
     <>
-        <ThemeProvider>
-            <ThemeButton/>
-            <Hero/>
-            <About/>
-            <Projects/>
-            <Contacts/>
-            <Footer/>
-        </ThemeProvider>
+        <Global css={css!("background-color:${bg};",bg=background_color)}/>
+            <ThemeProvider>
+                <ThemeButton/>
+                <Hero/>
+                <About/>
+                <Projects/>
+                <Contacts/>
+                <Footer/>
+            </ThemeProvider>
+
     </>
     }
 }
