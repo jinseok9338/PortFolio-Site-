@@ -37,8 +37,7 @@ async fn get_repos() -> octocrab::Result<()> {
     Ok(())
 }
 
-pub async fn project_data() -> Vec<ProjectsType> {
-    let result = get_repos().await.unwrap();
+pub fn project_data() -> Vec<ProjectsType> {
     let projects: Vec<ProjectsType> = vec![
         ProjectsType {
             project_title: "This is the title".to_string(),
