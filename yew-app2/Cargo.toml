@@ -13,6 +13,5 @@ stylist = { version="0.10.0", features = [
     "yew_use_style",
 ] }
 yew-stdweb = "0.18.0"
-octocrab = "0.16"
 getrandom = { version = "0.2", features = ["js"] }
 futures = "0.3"
